@@ -23,15 +23,19 @@ class _HomePageState extends State<HomePage> {
               fontWeight: FontWeight.bold,
               fontSize: 30,
             ),),
-            SizedBox(height: 50,),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+            SizedBox(height: 40,),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                Image.asset('assets/icons/google.png',width: 40,height: 40,),
-                SizedBox(width: 40,),
-                Image.asset('assets/icons/facebook.png',width: 40,height: 40,),
-              ],
-            ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset('assets/icons/google.png',width: 30,height: 30,),
+                    SizedBox(width: 40,),
+                    Image.asset('assets/icons/facebook.png',width: 30,height: 30,),
+                  ],
+                ),
+
             SizedBox(height: 50,),
             Container(
               padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
@@ -57,6 +61,7 @@ class _HomePageState extends State<HomePage> {
                 decoration: InputDecoration(
                   border: InputBorder.none,
                   hintText: 'Password',
+                  fillColor: Color(0xff9C9C9D),
                 ),
                 obscureText: true,
               ),
@@ -69,17 +74,30 @@ class _HomePageState extends State<HomePage> {
                 fontWeight: FontWeight.bold,
               ),),
             ),
-            SizedBox(height: 30,),
+            SizedBox(height: 20,),
             Container(
               child: TextButton(onPressed: () {},
-                child: Text('Login'),
-                style: TextButton.styleFrom(
-                  backgroundColor: Colors.grey,
-                  elevation: 
+                child: Center(
+                  child: Text('Login',style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white
+                  ),),
                 ),
+                style: TextButton.styleFrom(
+                  elevation: 0,
+                  backgroundColor: Colors.black,
+                  padding: EdgeInsets.all(18),
 
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                  ),
+                ),
               ),
             ),
+            SizedBox(height: 30,),
+            Center(child: Text("Create account", ))
+          ],
+        ),
           ],
         ),
       ),
