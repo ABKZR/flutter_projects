@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/Data%20Between%20Screens/screen_one.dart';
-import 'package:flutter_project/Login_Ui/login_page.dart';
+import 'package:flutter_project/Login_Ui_1/login_page.dart';
 import 'border/border.dart';
 
 void main() {

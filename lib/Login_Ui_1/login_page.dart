@@ -33,7 +33,7 @@ class Login extends StatelessWidget {
                             image: AssetImage('assets/images/light-1.png'),
                           ),
                         ),
-                      ),
+                    ),
                     ),
                     Positioned(
                       height: 150,
