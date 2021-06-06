@@ -61,11 +61,25 @@ class _MenuPageState extends State<MenuPage> {
                       ]
                     ),
                   ),
-                  SizedBox(height: 50,),
-                  Container(
-                    child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      
+                  SizedBox(height: 20,),
+                  Text('Free Delivery', style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.grey[500]
+                  ),),
+                  SizedBox(height: 10,),
+                  AspectRatio(
+                    aspectRatio: 1/1.5  ,
+                    child: GestureDetector(
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          image: DecorationImage(
+
+                            image: AssetImage('assets/images/one.jpg'),
+                          ),
+                        ),
+                      ),
                     ),
                   ),
                 ],

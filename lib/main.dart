@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project/Data%20Between%20Screens/screen_one.dart';
+import 'package:flutter_project/List/list_view.dart';
+import 'package:flutter_project/Login_Ui_1/login_page.dart';
+import 'package:flutter_project/border/border.dart';
 import 'package:flutter_project/food_app_ui/home_page.dart';
+import 'package:flutter_project/login_ui_2/Login_screen.dart';
 void main() {
   runApp(MyApp());
 }
@@ -9,9 +14,7 @@ class MyApp extends StatefulWidget {
   @override
   _MyAppState createState() => _MyAppState();
 }
-
 class _MyAppState extends State<MyApp> {
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -22,33 +25,80 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
-class PTR extends StatelessWidget {
-  const PTR({Key? key}) : super(key: key);
+class Dashboard extends StatelessWidget {
+  const Dashboard({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final numItems = 40;
-    final _biggerFont = const TextStyle(fontSize: 20.0);
-    Widget _buildRow(int idx) {
-      return ListTile(
-        leading: CircleAvatar(
-          child: Text('$idx'),
+    final Size size=MediaQuery.of(context).size;
+    return SafeArea(
+      child: Container(
+        width: size.width,
+        //padding: EdgeInsets.symmetric(horizontal: 50),
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              Colors.limeAccent,
+              Colors.orangeAccent,
+              Colors.redAccent,
+            ]
+          )
         ),
-        title: Text(
-          'Item $idx',
-          style: _biggerFont,
+        child: ListView(
+          scrollDirection: Axis.vertical,
+          children: [Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(height: 10,),
+              dashboardButton(title: 'Food Delivery Ui',page: HomePage(),),
+              Divider(),
+              dashboardButton(title: 'Login Ui-1', page: Login()),
+              Divider(),
+              dashboardButton(title: 'Login Ui-2', page: HomePage_login()),
+              Divider(),
+              dashboardButton(title: 'ListView', page: PTR()),
+              Divider(),
+              dashboardButton(title: 'Boarder', page: AnimatedContainerApp()),
+              Divider(),
+              dashboardButton(title: 'Data b/w Screens', page: news())
+            ],
+          ),
+      ]
         ),
-        trailing: Icon(Icons.dashboard),
-      );
-    }
-    return ListView.builder(
-      itemCount: numItems * 2,
-      padding: const EdgeInsets.all(16.0),
-      itemBuilder: (BuildContext context, int i) {
-        if (i.isOdd) return Divider();
-        final index = i ~/ 2 + 1;
-        return _buildRow(index);
-      },
+      ),
     );
   }
 }
+
+// ignore: camel_case_types, must_be_immutable
+class dashboardButton extends StatelessWidget {
+  dashboardButton({Key? key, required this.title, required this.page}) : super(key: key);
+String title;
+final page;
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      margin: EdgeInsets.all(10),
+      decoration: BoxDecoration(
+
+        borderRadius: BorderRadius.circular(30),
+        color: Colors.teal
+      ),
+      child: TextButton(
+        child: Text(title,style: TextStyle(
+          fontWeight: FontWeight.bold,
+          fontSize: 20,
+          color: Colors.blueGrey
+        ),),
+        onPressed: (){
+          Navigator.of(context).push(MaterialPageRoute(builder: (context)=>page));
+        },
+      ),
+    );
+  }
+}
+
+
+
