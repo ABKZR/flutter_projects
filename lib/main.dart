@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_project/Data%20Between%20Screens/screen_one.dart';
 import 'package:flutter_project/List/list_view.dart';
@@ -18,9 +19,10 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(fontFamily: 'Roboto'),
       debugShowCheckedModeBanner: false,
      home: Scaffold(
-        body: HomePage(),
+        body: Dashboard(),
     ),
     );
   }
@@ -37,10 +39,11 @@ class Dashboard extends StatelessWidget {
         //padding: EdgeInsets.symmetric(horizontal: 50),
         decoration: BoxDecoration(
           gradient: LinearGradient(
+            begin: AlignmentDirectional.centerStart,
             colors: [
-              Colors.limeAccent,
-              Colors.orangeAccent,
-              Colors.redAccent,
+              Colors.limeAccent.withOpacity(.9),
+              Colors.limeAccent.withOpacity(.7),
+              Colors.limeAccent.withOpacity(.5),
             ]
           )
         ),
@@ -82,7 +85,6 @@ final page;
       width: double.infinity,
       margin: EdgeInsets.all(10),
       decoration: BoxDecoration(
-
         borderRadius: BorderRadius.circular(30),
         color: Colors.teal
       ),

@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 class MenuPage extends StatefulWidget {
   const MenuPage({Key? key}) : super(key: key);
@@ -68,20 +69,7 @@ class _MenuPageState extends State<MenuPage> {
                     color: Colors.grey[500]
                   ),),
                   SizedBox(height: 10,),
-                  AspectRatio(
-                    aspectRatio: 1/1.5  ,
-                    child: GestureDetector(
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          image: DecorationImage(
-
-                            image: AssetImage('assets/images/one.jpg'),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
+                    Container(child: makeItem(image: 'assets/images/one.jpg',)),
                 ],
               ),
             ),
@@ -93,4 +81,66 @@ class _MenuPageState extends State<MenuPage> {
 
     }
   }
+
+
+Widget makeItem({required image}){
+
+    return AspectRatio(
+      aspectRatio: 1/1.5  ,
+      child: GestureDetector(
+        child: Container(
+          margin: EdgeInsets.only(right: 20),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            image: DecorationImage(
+              image: AssetImage(image),
+              fit: BoxFit.cover
+            ),
+          ),
+          child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              gradient: LinearGradient(
+                stops: [.2, .9],
+                begin: Alignment.bottomCenter,
+                colors: [
+                  Colors.black.withOpacity(.9),
+                  Colors.black.withOpacity(.3)
+                ]
+              ),
+            ),
+            child: Padding(
+              padding: EdgeInsets.all(20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                Align(
+                  alignment: Alignment.topRight,
+                  child: Icon(Icons.favorite, color: Colors.white,),
+                ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text("\$15.00",style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 40,
+                      ),),
+                      SizedBox(height: 10,),
+                      Text("Vegetarian Pizza" ,style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.white
+                      ),),
+                    ],
+                  ),
+                  ],
+
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+}
 
