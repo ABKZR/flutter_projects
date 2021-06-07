@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_project/Data%20Between%20Screens/screen_one.dart';
 import 'package:flutter_project/List/list_view.dart';
 import 'package:flutter_project/Login_Ui_1/login_page.dart';
+import 'package:flutter_project/Login_Ui_3/home.dart';
 import 'package:flutter_project/border/border.dart';
 import 'package:flutter_project/food_app_ui/home_page.dart';
 import 'package:flutter_project/login_ui_2/Login_screen.dart';
@@ -40,7 +41,7 @@ class Dashboard extends StatelessWidget {
         //padding: EdgeInsets.symmetric(horizontal: 50),
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            begin: AlignmentDirectional.centerStart,
+            begin: Alignment.centerRight,
             colors: [
               Colors.limeAccent.withOpacity(.9),
               Colors.limeAccent.withOpacity(.7),
@@ -67,7 +68,9 @@ class Dashboard extends StatelessWidget {
               Divider(),
               dashboardButton(title: 'Boarder', page: AnimatedContainerApp()),
               Divider(),
-              dashboardButton(title: 'Data b/w Screens', page: news())
+              dashboardButton(title: 'Data b/w Screens', page: news()),
+              Divider(),
+              dashboardButton(title: 'SignIn/Signup', page: HomeScreen()),
             ],
           ),
       ]
@@ -90,6 +93,7 @@ final page;
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(5),
         gradient: LinearGradient(
+          begin: Alignment.bottomCenter,
           colors: [
             Colors.greenAccent,
             Colors.cyanAccent,
@@ -101,7 +105,7 @@ final page;
         child: Text(title,style: TextStyle(
           fontWeight: FontWeight.bold,
           fontSize: 20,
-          color: Colors.blueGrey
+          color: Colors.white
         ),),
         onPressed: (){
           Navigator.of(context).push(MaterialPageRoute(builder: (context)=>page));
