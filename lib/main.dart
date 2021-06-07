@@ -35,6 +35,7 @@ class Dashboard extends StatelessWidget {
     final Size size=MediaQuery.of(context).size;
     return SafeArea(
       child: Container(
+        height: size.height,
         width: size.width,
         //padding: EdgeInsets.symmetric(horizontal: 50),
         decoration: BoxDecoration(
@@ -48,10 +49,12 @@ class Dashboard extends StatelessWidget {
           )
         ),
         child: ListView(
+          padding: EdgeInsets.all(10),
           scrollDirection: Axis.vertical,
-          children: [Column(
+          children: [
+            Column(
             mainAxisAlignment: MainAxisAlignment.end,
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               SizedBox(height: 10,),
               dashboardButton(title: 'Food Delivery Ui',page: HomePage(),),
@@ -85,8 +88,14 @@ final page;
       width: double.infinity,
       margin: EdgeInsets.all(10),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(30),
-        color: Colors.teal
+        borderRadius: BorderRadius.circular(5),
+        gradient: LinearGradient(
+          colors: [
+            Colors.greenAccent,
+            Colors.cyanAccent,
+            Colors.lightBlueAccent.shade700
+          ]
+        )
       ),
       child: TextButton(
         child: Text(title,style: TextStyle(
