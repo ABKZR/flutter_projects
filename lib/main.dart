@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_project/Bill_Spliter/bill_spliter.dart';
 import 'package:flutter_project/Data%20Between%20Screens/screen_one.dart';
 import 'package:flutter_project/List/list_view.dart';
 import 'package:flutter_project/Login_Ui_1/login_page.dart';
@@ -48,9 +49,9 @@ class Dashboard extends StatelessWidget {
             ]
           )
         ),
+
         child: Container(
           margin: EdgeInsets.only(top: 100),
-
           decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
@@ -59,13 +60,14 @@ class Dashboard extends StatelessWidget {
             ]
           ),
             border: Border(
-              left: BorderSide(color:Colors.black),
-              top: BorderSide(color:Colors.black),
-              right: BorderSide(color:Colors.black),
-              bottom: BorderSide(color:Colors.black),
+              left: BorderSide(color:Colors.orange),
+              top: BorderSide(color:Colors.orange),
+              right: BorderSide(color:Colors.orange),
+              bottom: BorderSide(color:Colors.orange),
             ),
             borderRadius: BorderRadius.only(topLeft:Radius.circular(50),topRight: Radius.circular(50)),
           ),
+          
           child: ListView(
             padding: EdgeInsets.all(10),
             scrollDirection: Axis.vertical,
@@ -88,6 +90,8 @@ class Dashboard extends StatelessWidget {
                 dashboardButton(title: 'Data b/w Screens', page: news()),
                 Divider(),
                 dashboardButton(title: 'SignIn/Signup', page: HomeScreen()),
+                Divider(),
+                dashboardButton(title: 'BillSplitter', page: BillSplitter()),
               ],
             ),
       ]
@@ -107,14 +111,15 @@ final page;
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
+      height: 60,
       margin: EdgeInsets.all(10),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(5),
+        borderRadius: BorderRadius.circular(20),
         gradient: LinearGradient(
           //begin: Alignment.bottomCenter,
           colors: [
-            Colors.black12,
-            Colors.black38,
+            Colors.orange,
+            Colors.orangeAccent
           ]
         )
 
