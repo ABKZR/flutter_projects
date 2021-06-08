@@ -43,37 +43,55 @@ class Dashboard extends StatelessWidget {
           gradient: LinearGradient(
             begin: Alignment.centerRight,
             colors: [
-              Colors.limeAccent.withOpacity(.9),
-              Colors.limeAccent.withOpacity(.7),
-              Colors.limeAccent.withOpacity(.5),
+              Colors.orange,
+              Colors.orangeAccent
             ]
           )
         ),
-        child: ListView(
-          padding: EdgeInsets.all(10),
-          scrollDirection: Axis.vertical,
-          children: [
-            Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              SizedBox(height: 10,),
-              dashboardButton(title: 'Food Delivery Ui',page: HomePage(),),
-              Divider(),
-              dashboardButton(title: 'Login Ui-1', page: Login()),
-              Divider(),
-              dashboardButton(title: 'Login Ui-2', page: HomePage_login()),
-              Divider(),
-              dashboardButton(title: 'ListView', page: PTR()),
-              Divider(),
-              dashboardButton(title: 'Boarder', page: AnimatedContainerApp()),
-              Divider(),
-              dashboardButton(title: 'Data b/w Screens', page: news()),
-              Divider(),
-              dashboardButton(title: 'SignIn/Signup', page: HomeScreen()),
-            ],
+        child: Container(
+          margin: EdgeInsets.only(top: 100),
+
+          decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              Colors.white.withOpacity(.9),
+              Colors.white.withOpacity(.5)
+            ]
           ),
+            border: Border(
+              left: BorderSide(color:Colors.black),
+              top: BorderSide(color:Colors.black),
+              right: BorderSide(color:Colors.black),
+              bottom: BorderSide(color:Colors.black),
+            ),
+            borderRadius: BorderRadius.only(topLeft:Radius.circular(50),topRight: Radius.circular(50)),
+          ),
+          child: ListView(
+            padding: EdgeInsets.all(10),
+            scrollDirection: Axis.vertical,
+            children: [
+              Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                SizedBox(height: 10,),
+                dashboardButton(title: 'Food Delivery Ui',page: HomePage(),),
+                Divider(),
+                dashboardButton(title: 'Login Ui-1', page: Login()),
+                Divider(),
+                dashboardButton(title: 'Login Ui-2', page: HomePage_login()),
+                Divider(),
+                dashboardButton(title: 'ListView', page: PTR()),
+                Divider(),
+                dashboardButton(title: 'Boarder', page: AnimatedContainerApp()),
+                Divider(),
+                dashboardButton(title: 'Data b/w Screens', page: news()),
+                Divider(),
+                dashboardButton(title: 'SignIn/Signup', page: HomeScreen()),
+              ],
+            ),
       ]
+          ),
         ),
       ),
     );
@@ -93,13 +111,13 @@ final page;
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(5),
         gradient: LinearGradient(
-          begin: Alignment.bottomCenter,
+          //begin: Alignment.bottomCenter,
           colors: [
-            Colors.greenAccent,
-            Colors.cyanAccent,
-            Colors.lightBlueAccent.shade700
+            Colors.black12,
+            Colors.black38,
           ]
         )
+
       ),
       child: TextButton(
         child: Text(title,style: TextStyle(
