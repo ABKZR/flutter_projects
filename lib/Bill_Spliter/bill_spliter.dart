@@ -163,7 +163,6 @@ class _BillSplitterState extends State<BillSplitter> {
                         max: 100,
                         activeColor: _color,
                         inactiveColor: Colors.grey.shade400,
-                        divisions: 20,
                         value: _tipPercentage.toDouble(), onChanged: (double value){
                       setState(() {
                         _tipPercentage=value.round();

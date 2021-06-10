@@ -5,6 +5,7 @@ import 'package:flutter_project/Data%20Between%20Screens/screen_one.dart';
 import 'package:flutter_project/List/list_view.dart';
 import 'package:flutter_project/Login_Ui_1/login_page.dart';
 import 'package:flutter_project/Login_Ui_3/home.dart';
+import 'package:flutter_project/Movie/movie_list.dart';
 import 'package:flutter_project/Todo_List/todo_list.dart';
 import 'package:flutter_project/border/border.dart';
 import 'package:flutter_project/food_app_ui/home_page.dart';
@@ -95,6 +96,8 @@ class Dashboard extends StatelessWidget {
                 dashboardButton(title: 'BillSplitter', page: BillSplitter()),
                 Divider(),
                 dashboardButton(title: 'Todo List', page: TodoList()),
+                Divider(),
+                dashboardButton(title: 'Movie App', page: MovieListView()),
               ],
             ),
       ]
