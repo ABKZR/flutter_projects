@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_project/Movie/models/movie.dart';
 // ignore: must_be_immutable
 class MovieListView extends StatelessWidget {
   MovieListView({Key? key}) : super(key: key);
+  final List<Movie> movieList= Movie.getMovie();
 List movies=[
   "300",
   "Avengers",
@@ -27,14 +29,14 @@ List movies=[
       ),
       backgroundColor: Colors.blueGrey.shade400,
       body: ListView.builder(
-        itemCount: movies.length,
+        itemCount: movieList.length,
         itemBuilder: (BuildContext context, int index){
         return Card(
           elevation: 4.5,
           color: Colors.white,
           child: ListTile(
-            title: Text(movies[index]),
-            subtitle: Text("sub"),
+            title: Text(movieList[index].title),
+            subtitle: Text("${movieList[0].title}"),
             leading: CircleAvatar(
               backgroundColor: Colors.blue,
               child: Container(
@@ -46,7 +48,7 @@ List movies=[
             ),
             trailing: Text("..."),
             onTap: () {
-             Navigator.push(context, MaterialPageRoute(builder: (context) => MovieListViewDetails(movieName: movies.elementAt(index),)));
+             Navigator.push(context, MaterialPageRoute(builder: (context) => MovieListViewDetails(movieName: movieList.elementAt(index).title,)));
             },
           ),
         );
