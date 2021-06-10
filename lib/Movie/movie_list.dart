@@ -5,21 +5,7 @@ import 'package:flutter_project/Movie/models/movie.dart';
 class MovieListView extends StatelessWidget {
   MovieListView({Key? key}) : super(key: key);
   final List<Movie> movieList= Movie.getMovie();
-List movies=[
-  "300",
-  "Avengers",
-  "Avengers- End Game",
-  "Avengers- Thor",
-  "Avengers- Loki",
-  "Avengers- Infinity war",
-  "Avengers- Iron man",
-  "Avengers- Ant man",
-  "Avengers- Captain America",
-  "Batman",
-  "Wonder Woman",
-  "Avengers- Hulk",
-  "Avengers- Vision"
-];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,19 +22,25 @@ List movies=[
           color: Colors.white,
           child: ListTile(
             title: Text(movieList[index].title),
-            subtitle: Text("${movieList[0].title}"),
+            subtitle: Text("${movieList[index].title}"),
             leading: CircleAvatar(
               backgroundColor: Colors.blue,
               child: Container(
+                width: 200,
+                height: 200,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(14),
+                  image: DecorationImage(
+                    image: NetworkImage(movieList[index].images[0]),
+                    fit: BoxFit.cover
+                  ),
+                  borderRadius: BorderRadius.circular(13.9),
                 ),
-                child: Text("H"),
+                child: null ,
               ),
             ),
             trailing: Text("..."),
             onTap: () {
-             Navigator.push(context, MaterialPageRoute(builder: (context) => MovieListViewDetails(movieName: movieList.elementAt(index).title,)));
+             Navigator.push(context, MaterialPageRoute(builder: (context) => MovieListViewDetails(movieName: movieList.elementAt(index).title,movie: movieList[index],)));
             },
           ),
         );
@@ -58,14 +50,15 @@ List movies=[
 }
 
 class MovieListViewDetails extends StatelessWidget {
-  MovieListViewDetails({Key? key, required this.movieName}) : super(key: key);
+  MovieListViewDetails({Key? key, required this.movieName, required this.movie}) : super(key: key);
 final String movieName;
+final Movie movie;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blueGrey.shade900,
-        title: Text("Movies ${this.movieName}"),
+        title: Text("Movies ${this.movie.actors}"),
       ),
       body: Center(
         child: Container(
