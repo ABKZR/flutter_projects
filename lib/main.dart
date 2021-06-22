@@ -41,7 +41,6 @@ class Dashboard extends StatelessWidget {
       child: Container(
         height: size.height,
         width: size.width,
-        //padding: EdgeInsets.symmetric(horizontal: 50),
         decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.centerRight,
@@ -49,9 +48,8 @@ class Dashboard extends StatelessWidget {
               Colors.orange,
               Colors.orangeAccent
             ]
-          )
+          ),
         ),
-
         child: Container(
           margin: EdgeInsets.only(top: 100),
           decoration: BoxDecoration(
@@ -89,7 +87,7 @@ class Dashboard extends StatelessWidget {
                 Divider(),
                 dashboardButton(title: 'Boarder', page: AnimatedContainerApp()),
                 Divider(),
-                dashboardButton(title: 'Data b/w Screens', page: news()),
+                dashboardButton(title: 'Data b/w Screens', page: News()),
                 Divider(),
                 dashboardButton(title: 'SignIn/Signup', page: HomeScreen()),
                 Divider(),

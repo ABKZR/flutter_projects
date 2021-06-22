@@ -184,6 +184,7 @@ class _BillSplitterState extends State<BillSplitter> {
   }
   calculateTotalTip(double billAmount,int splitBy, int tipPercentage){
     double totaltip = 0.0;
+    // ignore: unnecessary_null_comparison
     if(billAmount <0 || billAmount.toString().isEmpty || billAmount == null){
 
     }else{

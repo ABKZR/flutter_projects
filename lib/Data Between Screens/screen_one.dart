@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/Data%20Between%20Screens/second_screen.dart';
-class news extends StatelessWidget {
+// ignore: must_be_immutable
+// ignore: camel_case_types
+// ignore: must_be_immutable
+class News extends StatelessWidget {
   late String value;
   @override
   Widget build(BuildContext context) {
@@ -33,7 +36,7 @@ class news extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => second(
+                    builder: (context) => Second(
                       value: value,
                     ),
                   ),

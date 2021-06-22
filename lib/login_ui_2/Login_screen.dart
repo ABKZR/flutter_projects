@@ -1,12 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+// ignore: camel_case_types
 class HomePage_login extends StatefulWidget {
    HomePage_login({Key? key}) : super(key: key);
   @override
   _HomePage_loginState createState() => _HomePage_loginState();
 }
 
+// ignore: camel_case_types
 class _HomePage_loginState extends State<HomePage_login> {
   @override
   Widget build(BuildContext context) {
