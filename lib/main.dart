@@ -7,6 +7,7 @@ import 'package:flutter_project/Login_Ui_1/login_page.dart';
 import 'package:flutter_project/Login_Ui_3/home.dart';
 import 'package:flutter_project/Movie/movie_list.dart';
 import 'package:flutter_project/Todo_List/todo_list.dart';
+import 'package:flutter_project/Todoey/screens/tasks_screens.dart';
 import 'package:flutter_project/border/border.dart';
 import 'package:flutter_project/food_app_ui/home_page.dart';
 import 'package:flutter_project/login_ui_2/Login_screen.dart';
@@ -125,6 +126,8 @@ class Dashboard extends StatelessWidget {
                           dashboardButton(
                               title: 'Weather Forecast',
                               page: WeatherForecast()),
+                              Divider(),
+                              dashboardButton(title: 'Todoey', page: TaskScreen()),
                         ],
                       ),
                     ]),
