@@ -5,7 +5,6 @@ import 'package:flutter_project/Todoey/widgets/task_list.dart';
 class TaskScreen extends StatelessWidget {
 
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
