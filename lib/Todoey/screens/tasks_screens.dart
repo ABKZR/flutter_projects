@@ -1,22 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/Todoey/screens/add_tasks.dart';
 import 'package:flutter_project/Todoey/widgets/task_list.dart';
+import 'package:provider/provider.dart';
+import 'package:flutter_project/Todoey/model/task_data.dart';
 
+// ignore: must_be_immutable
 class TaskScreen extends StatelessWidget {
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.lightBlueAccent,
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          showModalBottomSheet(context: context, builder: (context) =>SingleChildScrollView(
-      child:Container(
-        padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
-        child: AddTaskScreen(),
-      )
-    ));
+          showModalBottomSheet(
+              context: context,
+              builder: (context) => SingleChildScrollView(
+                    child: Container(
+                      padding: EdgeInsets.only(
+                          bottom: MediaQuery.of(context).viewInsets.bottom),
+                      child: AddTaskScreen(),
+                    ),
+                  ));
         },
         backgroundColor: Colors.lightBlueAccent,
         child: Icon(Icons.add),
@@ -49,7 +53,7 @@ class TaskScreen extends StatelessWidget {
                       fontWeight: FontWeight.w700),
                 ),
                 Text(
-                  '12 Tasks',
+                  '${Provider.of<TaskData>(context).tasks.length} Tasks',
                   style: TextStyle(fontSize: 18, color: Colors.white),
                 ),
               ],

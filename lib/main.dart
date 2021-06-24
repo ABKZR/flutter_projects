@@ -7,11 +7,13 @@ import 'package:flutter_project/Login_Ui_1/login_page.dart';
 import 'package:flutter_project/Login_Ui_3/home.dart';
 import 'package:flutter_project/Movie/movie_list.dart';
 import 'package:flutter_project/Todo_List/todo_list.dart';
+import 'package:flutter_project/Todoey/model/task_data.dart';
 import 'package:flutter_project/Todoey/screens/tasks_screens.dart';
 import 'package:flutter_project/border/border.dart';
 import 'package:flutter_project/food_app_ui/home_page.dart';
 import 'package:flutter_project/login_ui_2/Login_screen.dart';
 import 'package:flutter_project/weather_forecast/weather_forecast.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(MyApp());
@@ -127,7 +129,8 @@ class Dashboard extends StatelessWidget {
                               title: 'Weather Forecast',
                               page: WeatherForecast()),
                               Divider(),
-                              dashboardButton(title: 'Todoey', page: TaskScreen()),
+                              dashboardButton(title: 'Todoey', page: ChangeNotifierProvider(create: (BuildContext context) =>TaskData(),
+                              child: TaskScreen())),
                         ],
                       ),
                     ]),
