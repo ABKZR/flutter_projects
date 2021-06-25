@@ -10,6 +10,7 @@ import 'package:flutter_project/Todo_List/todo_list.dart';
 import 'package:flutter_project/Todoey/model/task_data.dart';
 import 'package:flutter_project/Todoey/screens/tasks_screens.dart';
 import 'package:flutter_project/border/border.dart';
+import 'package:flutter_project/ecommerce_ui/ecommerce_ui.dart';
 import 'package:flutter_project/food_app_ui/home_page.dart';
 import 'package:flutter_project/login_ui_2/Login_screen.dart';
 import 'package:flutter_project/weather_forecast/weather_forecast.dart';
@@ -62,7 +63,7 @@ class Dashboard extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(top: 30, left: 30),
               child: Text(
-                "Dashboard",
+                "Welcome",
                 style: TextStyle(
                     color: Colors.white,
                     fontSize: 25,
@@ -135,6 +136,8 @@ class Dashboard extends StatelessWidget {
                               child: TaskScreen())),
                               Divider(),
                               dashboardButton(title: 'Chat Screen', page: ChatScreen()),
+                              Divider(),
+                              dashboardButton(title: 'Ecommerce Ui', page: EcommereceUi())
                         ],
                       ),
                     ]),
