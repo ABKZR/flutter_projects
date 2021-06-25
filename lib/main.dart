@@ -142,7 +142,6 @@ class Dashboard extends StatelessWidget {
     );
   }
 }
-
 // ignore: camel_case_types, must_be_immutable
 class dashboardButton extends StatelessWidget {
   dashboardButton({Key? key, required this.title, required this.page})
