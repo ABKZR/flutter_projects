@@ -15,6 +15,8 @@ import 'package:flutter_project/login_ui_2/Login_screen.dart';
 import 'package:flutter_project/weather_forecast/weather_forecast.dart';
 import 'package:provider/provider.dart';
 
+import 'ChatScreen/chat_screen.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -131,6 +133,8 @@ class Dashboard extends StatelessWidget {
                               Divider(),
                               dashboardButton(title: 'Todoey', page: ChangeNotifierProvider(create: (BuildContext context) =>TaskData(),
                               child: TaskScreen())),
+                              Divider(),
+                              dashboardButton(title: 'Chat Screen', page: ChatScreen()),
                         ],
                       ),
                     ]),

@@ -60,7 +60,6 @@ class News extends StatelessWidget {
         body: SingleChildScrollView(
           child: Column(
             children: [
-              
               GridView.count(crossAxisCount: 2,
               physics: NeverScrollableScrollPhysics(),
               shrinkWrap: true,
@@ -70,7 +69,6 @@ class News extends StatelessWidget {
               children: [
                 ReuseableGridViewCard(icons: Icons.wifi,name: "Wi-Fi",color: Colors.brown,),
                  ReuseableGridViewCard(color: Colors.blue, icons: Icons.bluetooth, name: 'Bluetooth'),
-  
               ],
               ),
               GridView.count(crossAxisCount: 3,
@@ -96,6 +94,7 @@ class News extends StatelessWidget {
               }
               ),
               ),
+              
             ],
           ),
         ),
