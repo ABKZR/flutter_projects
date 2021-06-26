@@ -34,6 +34,32 @@ class _EcommereceUiState extends State<EcommereceUi> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+      child: ListView(
+    padding: EdgeInsets.zero,
+    children: <Widget>[
+      DrawerHeader(
+        decoration: BoxDecoration(
+          color: Colors.blue,
+        ),
+        child: Text('Drawer Header'),
+      ),
+      ListTile(
+        title: Text('Item 1'),
+        onTap: () {
+        },
+      ),
+      ListTile(
+        title: Text('Item 2'),
+        onTap: () {
+          // Update the state of the app.
+          // ...
+        },
+      ),
+    ],
+  ),
+  
+  ),
       appBar: AppBar(
         title: Text(
           "Ecom App UI",
