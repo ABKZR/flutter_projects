@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter_project/ecommerce_ui/components/bottom_navigation_bar.dart';
 import 'package:flutter_project/ecommerce_ui/components/categories_widget.dart';
+import 'package:flutter_project/ecommerce_ui/components/drawer.dart';
 import 'package:flutter_project/ecommerce_ui/components/reuseable_card.dart';
+
 class EcommereceUi extends StatefulWidget {
 
   @override
@@ -34,32 +37,8 @@ class _EcommereceUiState extends State<EcommereceUi> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(
-      child: ListView(
-    padding: EdgeInsets.zero,
-    children: <Widget>[
-      DrawerHeader(
-        decoration: BoxDecoration(
-          color: Colors.blue,
-        ),
-        child: Text('Drawer Header'),
-      ),
-      ListTile(
-        title: Text('Item 1'),
-        onTap: () {
-        },
-      ),
-      ListTile(
-        title: Text('Item 2'),
-        onTap: () {
-          // Update the state of the app.
-          // ...
-        },
-      ),
-    ],
-  ),
-  
-  ),
+       bottomNavigationBar: BottomNavifationBar(),
+      drawer: DrawerWidget(),
       appBar: AppBar(
         title: Text(
           "Ecom App UI",
@@ -69,9 +48,9 @@ class _EcommereceUiState extends State<EcommereceUi> {
         elevation: 1,
         actions: [
           Padding(padding: EdgeInsets.only(right: 15),
-          child: Icon(Icons.notifications,color: Colors.black,))
+          child: Icon(Icons.notifications))
         ],
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.grey,
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -118,83 +97,18 @@ class _EcommereceUiState extends State<EcommereceUi> {
           physics: NeverScrollableScrollPhysics(),
             crossAxisSpacing: 2,
             mainAxisSpacing: 2,
-            children: [
-              ReuseableCardWidget(imageList: imageList,index: 0,name: "Laptop",),
-              ReuseableCardWidget(imageList: imageList, index: 1,name: "Laptop"),
-              ReuseableCardWidget(imageList: imageList,index: 2,name: "Laptop"),
-              ReuseableCardWidget(imageList: imageList, index: 3,name: "Laptop"),
-              ReuseableCardWidget(imageList: imageList,index: 4,name: "Laptop"),
-              ReuseableCardWidget(imageList: imageList, index: 5,name: "Laptop"),
-              ReuseableCardWidget(imageList: imageList, index: 6,name: "Laptop"),
-              ReuseableCardWidget(imageList: imageList, index: 7,name: "Laptop"),
-              ReuseableCardWidget(imageList: imageList, index: 8,name: "Laptop"),
-              ReuseableCardWidget(imageList: imageList, index: 9,name: "Laptop")
-            ],
+            children: List.generate(imageList.length, (index) => 
+            ReuseableCardWidget(imageList: imageList, index: index, name: "Laptop")),
             ),
             
           ],
         ),
       ),
-      bottomNavigationBar: BottomAppBar(
-        child: Container(
-          height: 60,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                MaterialButton(onPressed: (){},
-                minWidth: 40,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(Icons.home, color: Colors.purple,),
-                    Text("Home"),
-                  ],
-                ),
-                ),
-                  MaterialButton(onPressed: (){},
-                minWidth: 40,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(Icons.favorite, color: Colors.grey,),
-                    Text("Favorite"),
-                  ],
-                ),
-                )
-              ],
-              ),
-              Row(crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                MaterialButton(onPressed: (){},
-                minWidth: 40,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(Icons.add_shopping_cart, color: Colors.grey,),
-                    Text("Cart"),
-                  ],
-                ),
-                ),
-                  MaterialButton(onPressed: (){},
-                minWidth: 40,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(Icons.person, color: Colors.grey,),
-                    Text("Profile"),
-                  ],
-                ),
-                )
-              ],
-              )
-            ],),
-        ),
-      ),
+     
       floatingActionButton: FloatingActionButton(onPressed: (){},child: Icon(Icons.search,size: 35,),backgroundColor: Colors.purple,),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButtonAnimator: FloatingActionButtonAnimator.scaling,
     );
   }
 }
+
