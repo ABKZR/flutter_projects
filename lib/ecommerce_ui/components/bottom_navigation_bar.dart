@@ -2,9 +2,6 @@
 import 'package:flutter/material.dart';
 
 class BottomNavifationBar extends StatelessWidget {
-  const BottomNavifationBar({
-    Key? key,
-  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +25,9 @@ class BottomNavifationBar extends StatelessWidget {
                 ],
               ),
               ),
-                MaterialButton(onPressed: (){},
+                MaterialButton(onPressed: (){
+
+                },
               minWidth: 40,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,

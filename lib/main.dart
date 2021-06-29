@@ -14,6 +14,7 @@ import 'package:flutter_project/ecommerce_ui/ecommerce_ui.dart';
 import 'package:flutter_project/food_app_ui/home_page.dart';
 import 'package:flutter_project/login_ui_2/Login_screen.dart';
 import 'package:flutter_project/weather_forecast/weather_forecast.dart';
+import 'package:flutter_project/word/word_generator.dart';
 import 'package:provider/provider.dart';
 
 import 'ChatScreen/chat_screen.dart';
@@ -137,7 +138,9 @@ class Dashboard extends StatelessWidget {
                               Divider(),
                               dashboardButton(title: 'Chat Screen', page: ChatScreen()),
                               Divider(),
-                              dashboardButton(title: 'Ecommerce Ui', page: EcommereceUi())
+                              dashboardButton(title: 'Ecommerce Ui', page: EcommereceUi()),
+                              Divider(),
+                              dashboardButton(title: 'English Word', page: WordGenerator())
                         ],
                       ),
                     ]),
